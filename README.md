@@ -18,6 +18,10 @@ This repository contains the following manifest files:
 
 4. `servicemonitor.yaml`: Use this manifest to configure a ServiceMonitor object that instructs Prometheus on how to scrape metrics from our sample nginx deployment.
 
+5. `k6-loadtest-job.yaml`: This manifest file deploys a Kubernetes job that runs a load test on the my-website deployment. The job utilizes k6, a popular open-source load testing tool, to simulate concurrent users and measure the performance of your application under different scenarios.
+
+6. `test.js`: This file contains the k6 load test code. You can customize and modify this file to define your specific load testing scenarios and assertions.
+
 Feel free to explore, modify, and experiment with these manifest files during the workshop. We encourage you to dive into the configurations and adapt them to your specific use cases.
 
 ## Getting Started
@@ -42,6 +46,36 @@ To get started with the workshop, follow these steps:
    ```
 
 4. Dive into the workshop and explore the possibilities of observability in Kubernetes! Feel free to consult the workshop materials or reach out to our instructors for guidance.
+
+## K6 loadtest
+To execute the load test using k6 in this Kubernetes environment, follow the steps below:
+
+1. Execute the following command to create a ConfigMap named `test-file` using the `test.js` file from the `k6` folder:
+   ```
+   kubectl create configmap test-file --from-file=k6/test.js
+   ```
+
+   This command creates a ConfigMap in Kubernetes called `test-file` that allows you to provide the `test.js` file to the load testing job.
+
+2. Execute the following command to create the load testing job in Kubernetes:
+   ```
+   kubectl create -f k6/k6-loadtest-job.yaml
+   ```
+
+   This command deploys the load testing job, which runs the k6 load test using the `test.js` file provided through the ConfigMap.
+
+3. Monitor the status and progress of the load testing job using `kubectl` commands, such as:
+   ```
+   kubectl get jobs
+   kubectl describe job <job-name>
+   kubectl logs -f <pod-name>
+   ```
+
+   These commands allow you to observe the job's status, details, and real-time logs during the load test execution.
+
+By following these steps, you will be able to initiate the load testing process using k6 in Kubernetes and gain valuable insights into your application's performance under various scenarios.
+
+Happy load testing, and may your applications withstand the heaviest of workloads with ease!
 
 ## Additional Resources
 For additional resources and references related to observability in Kubernetes, check out the following links:
