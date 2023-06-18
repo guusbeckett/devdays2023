@@ -1,0 +1,17 @@
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: my-website
+  namespace: default
+  labels:
+    app: my-website
+spec:
+  selector:
+    matchLabels:
+      app: my-website
+  endpoints:
+    - interval: 15s
+      port: http-web-svc
+      path: /status/format/prometheus
+      scheme: http
