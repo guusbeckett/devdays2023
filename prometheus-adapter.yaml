@@ -272,7 +272,8 @@ spec:
         name: volume-serving-cert
       - configMap:
           name: adapter-config
-        name: config---
+        name: config
+---
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
