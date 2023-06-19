@@ -37,12 +37,12 @@ To get started with the workshop, follow these steps:
    cd devdays2023
    ```
 
-3. Deploy the manifest files using the `kubectl apply` command:
+3. Deploy the manifest files using the `kubectl create` command:
    ```
-   kubectl apply -f nginx.yaml
-   kubectl apply -f prometheus-monitor.yaml
-   kubectl apply -f prometheus.yaml
-   kubectl apply -f servicemonitor.yaml
+   kubectl create -f nginx.yaml
+   kubectl create -f prometheus-monitor.yaml
+   kubectl create -f prometheus.yaml
+   kubectl create -f servicemonitor.yaml
    ```
 
 4. Dive into the workshop and explore the possibilities of observability in Kubernetes! Feel free to consult the workshop materials or reach out to our instructors for guidance.
