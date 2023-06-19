@@ -51,6 +51,6 @@ spec:
         pathType: ImplementationSpecific
         backend:
           service:
-            name: nginx-service
+            name: my-website-service
             port:
               number: 80
