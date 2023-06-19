@@ -22,6 +22,8 @@ This repository contains the following manifest files:
 
 6. `test.js`: This file contains the k6 load test code. You can customize and modify this file to define your specific load testing scenarios and assertions.
 
+7. `hpa.yaml`: This manifest file contains a Horizontal Pod Autoscaler (HPA) configuration. It enables automatic scaling of the sample deployment based on CPU usage.
+
 Feel free to explore, modify, and experiment with these manifest files during the workshop. We encourage you to dive into the configurations and adapt them to your specific use cases.
 
 ## Getting Started
