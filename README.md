@@ -12,7 +12,7 @@ This repository contains the following manifest files:
 
 1. `nginx.yaml`: Deploy this manifest to set up a sample deployment, service, and ingress object. We will scrape metrics from this nginx deployment as part of the workshop.
 
-2. `prometheus-monitor.yaml`: Use this manifest to deploy the Prometheus Operator and its custom resource definition (CRD). The Prometheus Operator simplifies the management of Prometheus instances in Kubernetes.
+2. `prometheus-operator.yaml`: Use this manifest to deploy the Prometheus Operator and its custom resource definition (CRD). The Prometheus Operator simplifies the management of Prometheus instances in Kubernetes.
 
 3. `prometheus.yaml`: Deploy this manifest to create a Prometheus server. Prometheus is a popular monitoring and alerting toolkit that collects metrics from various sources.
 
