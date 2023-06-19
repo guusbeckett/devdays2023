@@ -21,6 +21,11 @@ spec:
         ports:
         - containerPort: 80
           name: http-web-svc
+        resources:
+          requests:
+            cpu: 50m
+          limits:
+            cpu: 250m
 ---
 apiVersion: v1
 kind: Service
