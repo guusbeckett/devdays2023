@@ -83,6 +83,52 @@ By following these steps, you will be able to initiate the load testing process 
 
 Happy load testing, and may your applications withstand the heaviest of workloads with ease!
 
+## Scaling based on metrics
+
+To observe the automatic scaling behavior of the deployment based on CPU load, follow the steps below:
+
+1. Execute the following command to create the Horizontal Pod Autoscaler (HPA) configuration:
+   ```
+   kubectl create -f hpa.yaml
+   ```
+
+   This command deploys the HPA based on CPU usage to automatically scale the deployment.
+
+2. Now, rerun the load test to observe the deployment scaling based on CPU load. Use the previous method you followed to execute the load test.
+
+3. Monitor the deployment and observe how it automatically scales based on the CPU load. You should see the number of replica pods increasing or decreasing as needed to meet the desired CPU utilization threshold.
+
+4. To remove the HPA and stop the automatic scaling, execute the following command:
+   ```
+   kubectl delete -f hpa.yaml
+   ```
+
+   This command deletes the HPA, and the deployment will no longer scale automatically based on CPU load.
+
+To explore custom metrics for scaling, follow these additional steps:
+
+1. Deploy the Prometheus Adapter by executing the following command:
+   ```
+   kubectl create -f prometheus-adapter.yaml
+   ```
+
+   This command deploys the Prometheus Adapter, enabling Kubernetes to use metrics from Prometheus for scaling purposes.
+
+2. Deploy the custom HPA based on custom metrics by running the following command:
+   ```
+   kubectl create -f hpa-custom.yaml
+   ```
+
+   This command creates the custom HPA configuration that scales the deployment based on the custom metric defined in the Prometheus configuration.
+
+3. Rerun the load test to observe the deployment scaling based on the custom metric. Use the previous method to execute the load test.
+
+4. Monitor the deployment and observe how it scales automatically based on the custom metric. You should see the number of replica pods increasing or decreasing based on the custom metric's values.
+
+
+Enjoy exploring the dynamic scaling capabilities provided by Kubernetes and Prometheus!
+
+
 ## Additional Resources
 For additional resources and references related to observability in Kubernetes, check out the following links:
 
