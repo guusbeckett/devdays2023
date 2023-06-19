@@ -26,6 +26,8 @@ This repository contains the following manifest files:
 
 8. `prometheus-adapter.yaml`: This manifest file sets up a Prometheus Adapter, which allows Kubernetes to use metrics from Prometheus for the Horizontal Pod Autoscaler (HPA) to perform scaling based on custom metrics.
 
+9. `hpa-custom.yaml`: This manifest file creates a custom Horizontal Pod Autoscaler (HPA) based on metrics scraped by Prometheus. It enables scaling based on custom metrics.
+
 Feel free to explore, modify, and experiment with these manifest files during the workshop. We encourage you to dive into the configurations and adapt them to your specific use cases.
 
 ## Getting Started
