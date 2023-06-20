@@ -46,7 +46,7 @@ To get started with the workshop, follow these steps:
 3. Deploy the manifest files using the `kubectl create` command:
    ```
    kubectl create -f nginx.yaml
-   kubectl create -f prometheus-monitor.yaml
+   kubectl create -f prometheus-operator.yaml
    kubectl create -f prometheus.yaml
    kubectl create -f servicemonitor.yaml
    ```
