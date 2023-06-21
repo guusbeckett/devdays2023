@@ -4,7 +4,7 @@ Welcome to the Observability Workshop repository! Here you will find a collectio
 
 ## Prerequisites
 To make the most of this workshop, ensure that you have the following prerequisites in place:
-- Access to a Kubernetes cluster
+- Access to a local Kubernetes cluster hosted by Rancher Desktop
 - Basic knowledge of containers and Kubernetes concepts
 
 ## Manifest Files
@@ -51,7 +51,17 @@ To get started with the workshop, follow these steps:
    kubectl create -f servicemonitor.yaml
    ```
 
-4. Dive into the workshop and explore the possibilities of observability in Kubernetes! Feel free to consult the workshop materials or reach out to our instructors for guidance.
+4. Visit the website you've just deployed. Use the `kubectl get services -A` to list all services in your cluster. The only public IP address will be the IP address for your ingress controller. You can paste this IP address in your browser to access the default Nginx hello world page.
+   ```
+   kubectl get services -A
+   ```
+The page should look like this:
+
+![Welcome to nginx landing page](images/nginx.png "Welcome to nginx!")
+
+5. To look at the Prometheus dashboard, you can set up a port forward to the `prometheus-containerized` service using the Rancher Desktop interface. Go to "Port Forwarding" and use the `Forward` button right next to the `prometheus-containerized` service. copy the port number and confirm the port forwarding. After you've done this you can visit `http://localhost:<port>` to access the Prometheus instance. 
+
+![Prometheus graph](images/prometheus.png "Prometheus graph")
 
 ## K6 loadtest
 To execute the load test using k6 in this Kubernetes environment, follow the steps below:
