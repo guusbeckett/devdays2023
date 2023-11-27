@@ -59,7 +59,7 @@ The page should look like this:
 
 ![Welcome to nginx landing page](images/nginx.png "Welcome to nginx!")
 
-5. To look at the Prometheus dashboard, you can set up a port forward to the `prometheus-containerized` service using the Rancher Desktop interface. Go to "Port Forwarding" and use the `Forward` button right next to the `prometheus-containerized` service. copy the port number and confirm the port forwarding. After you've done this you can visit `http://localhost:<port>` to access the Prometheus instance. 
+5. To look at the Prometheus dashboard, you can set up a port forward to the `prometheus-operated` service using the Rancher Desktop interface. Go to "Port Forwarding" and use the `Forward` button right next to the `prometheus-operated` service. copy the port number and confirm the port forwarding. After you've done this you can visit `http://localhost:<port>` to access the Prometheus instance. 
 
 ![Prometheus graph](images/prometheus.png "Prometheus graph")
 
